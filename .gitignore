@@ -49,5 +49,5 @@ target/
 hs_err_pid*
 
 # Windows
-.thumbsdb
+thumbs.db
 .bak
