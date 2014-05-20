@@ -1,23 +1,23 @@
 ### Introduction
 
-MultiBit is a Simplified Payment Verification (SPV) Bitcoin desktop client.
+MultiBit is a Simplified Payment Verification (SPV) digitalcoin desktop client.
 
 MultiBit relies on the following technologies:
 
 * Maven as the build system, so the usual Maven processes apply. If you're not familiar
 with Maven then [download it first](http://maven.apache.org) and follow their installation instructions.
 * [ZXing ("Zebra Crossing")](https://code.google.com/p/zxing/) for QR codes
-* [Bitcoinj](https://code.google.com/p/bitcoinj/) for access to the Bitcoin network
+* [digitalcoinj](https://code.google.com/p/bitcoinj/) for access to the digitalcoin network
 * IzPack for creating installers for Windows, Mac, Linux
 * [Bitcoinj Enforcer Rules](https://github.com/gary-rowe/BitcoinjEnforcerRules) to prevent dependency chain attacks
 * [XChange](https://github.com/timmolter/XChange) for access to several Bitcoin exchanges
 
-### The Bitcoinj "Alice" dependency
+### The digitalcoinj "Alice" dependency
 
-MultiBit depends on a special fork of Bitcoinj for its Bitcoin support. This is due to legacy wallet serialization issues
+MultiBit depends on a special fork of digitalcoinj for its digitalcoin support. This is due to legacy wallet serialization issues
 and the MultiBit team are working towards a complete integration through the MultiBit HD project.
 
-While it is possible to build MultiBit using our staging repository you may want to review the modified Bitcoinj library
+While it is possible to build MultiBit using our staging repository you may want to review the modified digitalcoinj library
 for yourself. You can clone from this fork:
 ```
 https://code.google.com/r/jimburton618-bitcoinj-coinbase-tx/source/checkout
@@ -26,7 +26,7 @@ https://code.google.com/r/jimburton618-bitcoinj-coinbase-tx/source/checkout
 The branch you should use for the MultiBit master code is: `bcj-0.11.2-mb-alice`
 The branch you should use for the MultiBit develop code is: `bcj-0.11.2-mb-alice`
 
-Once cloned, you should then install the custom Bitcoinj library using
+Once cloned, you should then install the custom digitalcoinj library using
 
 ```
 mvn clean install
