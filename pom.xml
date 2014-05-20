@@ -689,8 +689,8 @@
         </dependency>
         <dependency>
             <groupId>com.google</groupId>
-            <artifactId>bitcoinj</artifactId>
-            <version>${bitcoinj.version}</version>
+            <artifactId>digitalcoinj</artifactId>
+            <version>${digitalcoinj.version}</version>
             <scope>compile</scope>
         </dependency>
          <dependency>
