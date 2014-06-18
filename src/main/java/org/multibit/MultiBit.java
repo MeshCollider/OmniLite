@@ -15,6 +15,7 @@
  */
 package org.multibit;
 
+import com.google.bitcoin.core.CoinDefinition;
 import com.google.bitcoin.core.StoredBlock;
 import com.google.bitcoin.core.Wallet;
 import org.multibit.controller.Controller;
@@ -253,7 +254,7 @@ public final class MultiBit {
             directoryMessage2.setShowInStatusBar(false);
             MessageManager.INSTANCE.addMessage(directoryMessage2);
 
-            log.debug("Creating Bitcoin service");
+            log.debug("Creating "+ CoinDefinition.coinName +" service");
             // Create the MultiBitService that connects to the bitcoin network.
             MultiBitService multiBitService = new MultiBitService(bitcoinController);
             bitcoinController.setMultiBitService(multiBitService);
@@ -536,7 +537,7 @@ public final class MultiBit {
                 }
             }
 
-            log.debug("Checking for Bitcoin URI on command line");
+            log.debug("Checking for "+ CoinDefinition.coinName +" URI on command line");
             // Check for a valid entry on the command line (protocol handler).
             if (args != null && args.length > 0) {
                 for (int i = 0; i < args.length; i++) {
@@ -544,7 +545,7 @@ public final class MultiBit {
                 }
                 processCommandLineURI(bitcoinController, args[0]);
             } else {
-                log.debug("No Bitcoin URI provided as an argument");
+                log.debug("No "+CoinDefinition.coinName+" URI provided as an argument");
             }
 
             // Indicate to the application that startup has completed.
@@ -671,7 +672,7 @@ public final class MultiBit {
                 rawURI = rawURI.replaceAll("%26", "&");
             }
             final URI uri;
-            log.debug("Working with '{}' as a Bitcoin URI", rawURI);
+            log.debug("Working with '{}' as a "+CoinDefinition.coinName+" URI", rawURI);
             // Construct an OpenURIEvent to simulate receiving this from a
             // listener
             uri = new URI(rawURI);
@@ -729,7 +730,7 @@ public final class MultiBit {
     }
 
     public static void setRememberedRawBitcoinURI(String rememberedRawBitcoinURI) {
-        log.debug("Remembering the bitcoin URI to process of '" + rememberedRawBitcoinURI + "'");
+        log.debug("Remembering the "+CoinDefinition.coinName+" URI to process of '" + rememberedRawBitcoinURI + "'");
         MultiBit.rememberedRawBitcoinURI = rememberedRawBitcoinURI;
     }
 }

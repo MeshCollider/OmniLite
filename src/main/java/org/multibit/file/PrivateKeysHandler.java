@@ -216,7 +216,7 @@ public class PrivateKeysHandler {
 
     private void outputHeaderComment(StringBuffer out) {
         out.append("# KEEP YOUR PRIVATE KEYS SAFE !").append("\n");
-        out.append("# Anyone who can read this file can spend your bitcoin.").append("\n");
+        out.append("# Anyone who can read this file can spend your "+CoinDefinition.coinName+"s.").append("\n");
         out.append("#").append("\n");
         out.append("# Format:").append("\n");
         out.append("#   <Base58 encoded private key>[<whitespace>[<key createdAt>]]").append("\n");

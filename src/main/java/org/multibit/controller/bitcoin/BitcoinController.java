@@ -282,7 +282,7 @@ public class BitcoinController extends AbstractController<CoreController> implem
         if (Boolean.FALSE.toString().equalsIgnoreCase(useUriText)
                 && Boolean.FALSE.toString().equalsIgnoreCase(showOpenUriDialogText)) {
             // ignore open URI request
-            log.debug("Bitcoin URI ignored because useUriText = '" + useUriText + "', showOpenUriDialogText = '"
+            log.debug(CoinDefinition.coinName+" URI ignored because useUriText = '" + useUriText + "', showOpenUriDialogText = '"
                     + showOpenUriDialogText + "'");
             org.multibit.message.Message message = new org.multibit.message.Message(super.getLocaliser().getString("showOpenUriView.paymentRequestIgnored"));
             MessageManager.INSTANCE.addMessage(message);
@@ -290,7 +290,7 @@ public class BitcoinController extends AbstractController<CoreController> implem
             return;
         }
         if (rawBitcoinURIString == null || rawBitcoinURIString.equals("")) {
-            log.debug("No Bitcoin URI found to handle");
+            log.debug("No "+CoinDefinition.coinName+" URI found to handle");
             return;
         }
         // Process the URI

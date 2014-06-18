@@ -5,38 +5,38 @@ see http://msdn.microsoft.com/en-us/library/aa767914(v=vs.85).aspx
 bitcoin.reg:
 Windows Registry Editor Version 5.00
 
-[HKEY_CLASSES_ROOT\bitcoin]
+[HKEY_CLASSES_ROOT\digitalcoin]
 @="URL:Bitcoin Protocol"
 "URL Protocol"=""
 
-[HKEY_CLASSES_ROOT\bitcoin\DefaultIcon]
+[HKEY_CLASSES_ROOT\digitalcoin\DefaultIcon]
 @="multibit.exe,1"
 
-[HKEY_CLASSES_ROOT\bitcoin\shell]
+[HKEY_CLASSES_ROOT\digitalcoin\shell]
 
-[HKEY_CLASSES_ROOT\bitcoin\shell\open]
+[HKEY_CLASSES_ROOT\digitalcoin\shell\open]
 
-[HKEY_CLASSES_ROOT\bitcoin\shell\open\command]
+[HKEY_CLASSES_ROOT\digitalcoin\shell\open\command]
 @="\"C:\\Program Files\\MultiBit-0.2.0beta4\\multibit.exe\" \"%1\""
 
 
 -->
 <registry>
   <pack name="MultiBit">
-    <key root="HKCR" keypath="bitcoin" />
-    <value root="HKCR" name="" keypath="bitcoin" string="URL:Bitcoin Protocol"/>
-    <value root="HKCR" name="URL Protocol" keypath="bitcoin" string=""/>
-    <value root="HKCR" name="UseOriginalUrlEncoding" keypath="bitcoin" dword="1"/>
+    <key root="HKCR" keypath="digitalcoin" />
+    <value root="HKCR" name="" keypath="digitalcoin" string="URL:digitalcoin Protocol"/>
+    <value root="HKCR" name="URL Protocol" keypath="digitalcoin" string=""/>
+    <value root="HKCR" name="UseOriginalUrlEncoding" keypath="digitalcoin" dword="1"/>
 
-    <key root="HKCR" keypath="bitcoin\DefaultIcon" />
-    <value root="HKCR" name="" keypath="bitcoin\DefaultIcon" string="multibit.exe,1"/>
+    <key root="HKCR" keypath="digitalcoin\DefaultIcon" />
+    <value root="HKCR" name="" keypath="digitalcoin\DefaultIcon" string="multibit.exe,1"/>
 
-    <key root="HKCR" keypath="bitcoin\shell" />
+    <key root="HKCR" keypath="digitalcoin\shell" />
 
-    <key root="HKCR" keypath="bitcoin\shell\open" />
+    <key root="HKCR" keypath="digitalcoin\shell\open" />
 
-    <key root="HKCR" keypath="bitcoin\shell\open\command" />
-    <value root="HKCR" keypath="bitcoin\shell\open\command" name="" string="&quot;$INSTALL_PATH\multibit.exe&quot; &quot;%1&quot;" />
+    <key root="HKCR" keypath="digitalcoin\shell\open\command" />
+    <value root="HKCR" keypath="digitalcoin\shell\open\command" name="" string="&quot;$INSTALL_PATH\multibit.exe&quot; &quot;%1&quot;" />
 
   </pack>
 </registry>

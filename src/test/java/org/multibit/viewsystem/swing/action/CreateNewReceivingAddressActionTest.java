@@ -15,6 +15,7 @@
  */
 package org.multibit.viewsystem.swing.action;
 
+import com.google.bitcoin.core.CoinDefinition;
 import junit.framework.TestCase;
 
 import org.junit.Test;
@@ -56,7 +57,7 @@ public class CreateNewReceivingAddressActionTest extends TestCase {
             createNewReceivingAddressAction.actionPerformed(null);
             Object[] messages = MessageManager.INSTANCE.getMessages().toArray();
             assertTrue("There were no messages but there should have been", messages != null && messages.length > 0);
-            assertEquals("Wrong message after receive bitcoin confirm with no active wallet",
+            assertEquals("Wrong message after receive "+ CoinDefinition.coinName+" confirm with no active wallet",
                     ResetTransactionsSubmitActionTest.EXPECTED_NO_WALLET_IS_SELECTED,
                     ((Message) messages[messages.length - 1]).getText());
         }

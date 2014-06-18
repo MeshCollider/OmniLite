@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
 
+import com.google.bitcoin.core.*;
 import junit.framework.TestCase;
 
 import org.junit.Before;
@@ -41,10 +42,6 @@ import org.multibit.viewsystem.simple.SimpleViewSystem;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.google.bitcoin.core.DumpedPrivateKey;
-import com.google.bitcoin.core.ECKey;
-import com.google.bitcoin.core.NetworkParameters;
-import com.google.bitcoin.core.Wallet;
 import com.google.bitcoin.core.Wallet.BalanceType;
 
 public class ReplayManagerTest extends TestCase {
@@ -76,7 +73,7 @@ public class ReplayManagerTest extends TestCase {
         final CreateControllers.Controllers controllers = CreateControllers.createControllers(applicationDataDirectoryLocator);
         controller = controllers.bitcoinController;
 
-        log.debug("Creating Bitcoin service");
+        log.debug("Creating "+ CoinDefinition.coinName+" service");
         // Create the MultiBitService that connects to the bitcoin network.
         MultiBitService multiBitService = new MultiBitService(controller);
         controller.setMultiBitService(multiBitService);

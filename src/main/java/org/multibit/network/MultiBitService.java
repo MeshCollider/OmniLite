@@ -85,8 +85,9 @@ public class MultiBitService {
   public static final String CHECKPOINTS_SUFFIX = ".checkpoints";
   public static final String WALLET_SUFFIX = ".wallet";
 
-  public static final String IRC_CHANNEL_TEST = "#bitcoinTEST";
-  public static final String IRC_CHANNEL_TESTNET3 = "#bitcoinTEST3";
+  public static final String IRC_CHANNEL = "#"+CoinDefinition.lowerCaseCoinName()+"00";
+  public static final String IRC_CHANNEL_TEST = "#"+CoinDefinition.lowerCaseCoinName()+"TEST";
+  public static final String IRC_CHANNEL_TESTNET3 = "#"+CoinDefinition.lowerCaseCoinName()+"TEST3";
 
   public Logger logger = LoggerFactory.getLogger(MultiBitService.class.getName());
 

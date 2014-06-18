@@ -15,6 +15,7 @@
  */
 package org.multibit.functionaltests;
 
+import com.google.bitcoin.core.CoinDefinition;
 import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
@@ -65,7 +66,7 @@ public class CreateAndDeleteWalletsTest extends TestCase {
             final CreateControllers.Controllers controllers = CreateControllers.createControllers(applicationDataDirectoryLocator);
             controller = controllers.bitcoinController;
 
-            log.debug("Creating Bitcoin service");
+            log.debug("Creating "+ CoinDefinition.coinName+" service");
             // create the MultiBitService that connects to the bitcoin network
             MultiBitService multiBitService = new MultiBitService(controller);
             controller.setMultiBitService(multiBitService);

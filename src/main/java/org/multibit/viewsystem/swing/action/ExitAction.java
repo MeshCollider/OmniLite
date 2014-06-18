@@ -15,6 +15,7 @@
  */
 package org.multibit.viewsystem.swing.action;
 
+import com.google.bitcoin.core.CoinDefinition;
 import com.google.bitcoin.store.BlockStore;
 import com.google.bitcoin.store.BlockStoreException;
 import org.multibit.ApplicationInstanceManager;
@@ -114,7 +115,7 @@ public class ExitAction extends AbstractExitAction {
         if (bitcoinController != null && bitcoinController.getMultiBitService() != null) {
             // Stop the peer group so that blocks are notified to wallets correctly.
             if (bitcoinController.getMultiBitService().getPeerGroup() != null) {
-                log.debug("Closing Bitcoin network connection...");
+                log.debug("Closing "+ CoinDefinition.coinName+" network connection...");
                 bitcoinController.getMultiBitService().getPeerGroup().stopAndWait();
                 log.debug("PeerGroup is now stopped.");
             }
@@ -184,7 +185,7 @@ public class ExitAction extends AbstractExitAction {
             FileHandler.writeUserPreferences(bitcoinController);
         }
 
-        log.debug("Shutting down Bitcoin URI checker ...");
+        log.debug("Shutting down "+ CoinDefinition.coinName+" URI checker ...");
         ApplicationInstanceManager.shutdownSocket();
 
         // Get rid of main display.

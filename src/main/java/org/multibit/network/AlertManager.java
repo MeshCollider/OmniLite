@@ -35,6 +35,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.SwingWorker;
 
+import com.google.bitcoin.core.*;
 import org.multibit.Localiser;
 import org.multibit.controller.core.CoreController;
 import org.multibit.controller.bitcoin.BitcoinController;
@@ -50,12 +51,6 @@ import org.multibit.viewsystem.swing.MultiBitFrame;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.spongycastle.crypto.params.KeyParameter;
-
-import com.google.bitcoin.core.ECKey;
-import com.google.bitcoin.core.NetworkParameters;
-import com.google.bitcoin.core.Utils;
-import com.google.bitcoin.core.Wallet;
-
 
 
 public enum AlertManager {
@@ -454,7 +449,7 @@ public enum AlertManager {
             }
             
             if (signingKey == null) {
-                System.out.println("No signing key could be found with the Bitcoin address prefix of '" + addressPrefix + "'");
+                System.out.println("No signing key could be found with the "+ CoinDefinition.coinName+" address prefix of '" + addressPrefix + "'");
             }
             
             String publicKeyAsHex = Utils.bytesToHexString(signingKey.getPubKey());

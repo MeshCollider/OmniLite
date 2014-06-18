@@ -15,6 +15,7 @@
  */
 package org.multibit.functionaltests;
 
+import com.google.bitcoin.core.CoinDefinition;
 import junit.framework.TestCase;
 import org.junit.Test;
 import org.multibit.ApplicationDataDirectoryLocator;
@@ -71,7 +72,7 @@ public class GenesisBlockReplayTest extends TestCase {
             // Create MultiBit controller.
             final CreateControllers.Controllers controllers = CreateControllers.createControllers(applicationDataDirectoryLocator);
 
-            log.debug("Creating Bitcoin service");
+            log.debug("Creating "+ CoinDefinition.coinName+" service");
             // Create the MultiBitService that connects to the bitcoin network.
             MultiBitService multiBitService = new MultiBitService(controllers.bitcoinController);
             controllers.bitcoinController.setMultiBitService(multiBitService);

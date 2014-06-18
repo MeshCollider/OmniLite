@@ -16,10 +16,7 @@
 package org.multibit.functionaltests;
 
 
-import com.google.bitcoin.core.DumpedPrivateKey;
-import com.google.bitcoin.core.NetworkParameters;
-import com.google.bitcoin.core.Transaction;
-import com.google.bitcoin.core.Wallet;
+import com.google.bitcoin.core.*;
 import com.google.bitcoin.core.Wallet.BalanceType;
 import junit.framework.TestCase;
 import org.junit.Test;
@@ -84,7 +81,7 @@ public class MiningCoinBaseTransactionsSeenTest extends TestCase {
             // Create MultiBit controller.
             final CreateControllers.Controllers controllers = CreateControllers.createControllers(applicationDataDirectoryLocator);
 
-            log.debug("Creating Bitcoin service");
+            log.debug("Creating "+ CoinDefinition.coinName+" service");
             // Create the MultiBitService that connects to the bitcoin network.
             MultiBitService multiBitService = new MultiBitService(controllers.bitcoinController);
             log.debug("multiBitService = " + multiBitService);

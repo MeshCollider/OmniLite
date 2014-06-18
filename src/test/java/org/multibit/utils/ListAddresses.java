@@ -1,5 +1,6 @@
 package org.multibit.utils;
 
+import com.google.bitcoin.core.CoinDefinition;
 import com.google.bitcoin.core.ECKey;
 import com.google.bitcoin.core.NetworkParameters;
 import com.google.bitcoin.core.Wallet;
@@ -45,7 +46,7 @@ public class ListAddresses {
         // Create MultiBit controller.
         final CreateControllers.Controllers controllers = CreateControllers.createControllers(applicationDataDirectoryLocator);
 
-        log.debug("Creating Bitcoin service");
+        log.debug("Creating "+ CoinDefinition.coinName+" service");
         // Create the MultiBitService that connects to the bitcoin network.
         MultiBitService multiBitService = new MultiBitService(controllers.bitcoinController);
         log.debug("multiBitService = " + multiBitService);
