@@ -78,18 +78,18 @@ public class ApplicationDataDirectoryLocator {
             String operatingSystemName = System.getProperty("os.name");
             if (operatingSystemName != null && operatingSystemName.startsWith("Windows")) {
                 // Windows os
-                applicationDataDirectory = System.getenv("APPDATA") + File.separator + "MultiBit";
+                applicationDataDirectory = System.getenv("APPDATA") + File.separator + "D-Lite";
             } else {
                 if (operatingSystemName != null && operatingSystemName.startsWith("Mac")) {
                     // Mac os
                     if ( (new File("../../../../" + FileHandler.USER_PROPERTIES_FILE_NAME)).exists()) {
                         applicationDataDirectory = new File("../../../..").getAbsolutePath();
                     } else {
-                        applicationDataDirectory = System.getProperty("user.home") + "/Library/Application Support/MultiBit";
+                        applicationDataDirectory = System.getProperty("user.home") + "/Library/Application Support/D-Lite";
                     }
                 } else {
                     // treat as Linux/ unix variant
-                    applicationDataDirectory = System.getProperty("user.home") + "/MultiBit";
+                    applicationDataDirectory = System.getProperty("user.home") + "/D-Lite";
                 }
             }
             

@@ -75,7 +75,7 @@ public class MultiBitService {
 
   private static final Logger log = LoggerFactory.getLogger(MultiBitService.class);
 
-  public static final String MULTIBIT_PREFIX = "multibit";
+  public static final String MULTIBIT_PREFIX = "d-lite"; //multibit
   public static final String TESTNET_PREFIX = "testnet";
   public static final String TESTNET3_PREFIX = "testnet3";
   public static final String SEPARATOR = "-";
