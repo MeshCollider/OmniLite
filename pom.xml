@@ -20,12 +20,12 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.multibit</groupId>
-    <artifactId>multibit</artifactId>
+    <groupId>hashengineering.digitalcoin</groupId>
+    <artifactId>d-lite</artifactId>
     <version>0.5.18</version>
-    <name>MultiBit</name>
-    <description>A Java Swing client for Bitcoin</description>
-    <url>https://multibit.org</url>
+    <name>D-Lite</name>
+    <description>A Java Swing client for Digitalcoin</description>
+    <url>http://hashengineeringsolutions.com</url>
     <!-- Use "mvn clean package" to build the code packaged into a basic multibit.jar 
   		Use "mvn clean verify" before submitting a patch Use "mvn clean install" 
   		to build the executable jar, installers and Mac DMG Use "mvn site:site" to 
@@ -42,12 +42,12 @@
 
     <issueManagement>
         <system>GitHub</system>
-        <url>https://github.com/jim618/multibit/issues</url>
+        <url>https://github.com/HashEngineering/digitalcoin-multibit/issues</url>
     </issueManagement>
 
     <scm>
         <!-- Public read-only source -->
-        <url>https://github.com/jim618/multibit</url>
+        <url>https://github.com/HashEngineering/digitalcoin-multibit</url>
     </scm>
 
     <repositories>
@@ -89,7 +89,7 @@
     </repositories>
 
     <build>
-        <finalName>multibit</finalName>
+        <finalName>d-lite</finalName>
         <resources>
             <!-- filter properties files e.g. version.properties -->
             <resource>
@@ -267,7 +267,7 @@
                                 <resource>
                                     <directory>target</directory>
                                     <includes>
-                                        <include>multibit-exe.jar</include>
+                                        <include>d-lite-exe.jar</include>
                                     </includes>
                                 </resource>
                             </resources>
@@ -320,7 +320,7 @@
                                 <resource>
                                     <directory>target</directory>
                                     <includes>
-                                        <include>multibit.exe</include>
+                                        <include>d-lite.exe</include>
                                     </includes>
                                 </resource>
                             </resources>
@@ -339,12 +339,12 @@
                             <goal>copy-resources</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>${basedir}/target/MultiBit.app
+                            <outputDirectory>${basedir}/target/D-Lite.app
                             </outputDirectory>
                             <resources>
                                 <resource>
                                     <!-- skeleton app including JRE -->
-                                    <directory>src/app-resources/MultiBit.app</directory>
+                                    <directory>src/app-resources/D-Lite.app</directory>
                                 </resource>
                             </resources>
                         </configuration>
@@ -356,13 +356,13 @@
                             <goal>copy-resources</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>${basedir}/target/MultiBit.app/Contents/Resources/Java
+                            <outputDirectory>${basedir}/target/D-Lite.app/Contents/Resources/Java
                             </outputDirectory>
                             <resources>
                                 <resource>
                                     <directory>${basedir}/target/staging.linux</directory>
                                     <includes>
-                                        <include>multibit-exe.jar</include>
+                                        <include>d-lite-exe.jar</include>
                                         <include>multibit.checkpoints</include>
                                         <include>release_notes.txt</include>
                                         <include>configuration.md</include>
@@ -434,12 +434,12 @@
                                 <!-- Make the JavaApplicationStub in the Mac application bundle executable
                        									(it loses its 'x' permission after the copy) -->
                                 <chmod
-                                        file="${basedir}/target/MultiBit.app/Contents/MacOS/JavaApplicationStub"
+                                        file="${basedir}/target/D-Lite.app/Contents/MacOS/JavaApplicationStub"
                                         perm="777" />
 
                                 <copy
-                                        todir="${basedir}/target/MultiBit-mac/MultiBit.app">
-                                    <fileset dir="${basedir}/target/MultiBit.app"
+                                        todir="${basedir}/target/MultiBit-mac/D-Lite.app">
+                                    <fileset dir="${basedir}/target/D-Lite.app"
                                              includes="**" />
                                 </copy>
                                 <copy file="${basedir}/src/main/izpack/mac/readme.txt"
@@ -455,18 +455,18 @@
                                 <!-- Make the JavaAppLauncher in the MultiBit app (it loses its
                        									'x' permission after the copy) -->
                                 <chmod
-                                        file="${basedir}/target/MultiBit-mac/MultiBit.app/Contents/MacOS/JavaApplicationStub"
+                                        file="${basedir}/target/MultiBit-mac/D-Lite.app/Contents/MacOS/JavaApplicationStub"
                                         perm="777" />
 
                                 <!-- Sign the Mac app -->
                                 <exec executable="codesign" os="'Mac OS X'">
                                     <arg
-                                            line="--sign 'Developer ID Application: James Burton' --force ${basedir}/target/MultiBit-mac/MultiBit.app" />
+                                            line="--sign 'Developer ID Application: James Burton' --force ${basedir}/target/MultiBit-mac/D-Lite.app" />
                                 </exec>
                                 <!-- Verify it is signed ok -->
                                 <exec executable="codesign" os="'Mac OS X'">
                                     <arg
-                                            line="--display --verbose=4 ${basedir}/target/MultiBit-mac/MultiBit.app" />
+                                            line="--display --verbose=4 ${basedir}/target/MultiBit-mac/D-Lite.app" />
                                 </exec>
 
                                 <!-- create a DMG file -->
@@ -477,7 +477,7 @@
                                     <arg value="zlib-level=9" />
                                     <arg value="-srcfolder" />
                                     <arg value="${basedir}/target/MultiBit-mac" />
-                                    <arg value="${basedir}/target/multibit-${project.version}.dmg" />
+                                    <arg value="${basedir}/target/d-lite-${project.version}.dmg" />
                                 </exec>
 
                                 <!-- IMPORTANT! -->
@@ -533,7 +533,7 @@
                                          classpathref="jsmooth-classpathref" />
                                 <jsmoothgen project="src/main/jsmooth/installer.jsmooth"
                                             skeletonroot="src/main/jsmooth/skeletons" />
-                                <move file="target/multibit-windows.exe" tofile="target/multibit-${project.version}-windows-setup.exe" />
+                                <move file="target/d-lite-windows.exe" tofile="target/d-lite-${project.version}-windows-setup.exe" />
                             </tasks>
                         </configuration>
                         <goals>
@@ -806,7 +806,7 @@
         </staging.linux.dir>
 
         <!-- Version of BitCoinJ to use (multiple uses) -->
-        <bitcoinj.version>0.11.2-MB-ALICE</bitcoinj.version>
+        <digitalcoinj.version>0.11.2-MB-ALICE</digitalcoinj.version>
 
         <!-- Version of XChange to use (multiple uses) -->
         <xchange.version>1.10.0</xchange.version>

@@ -91,8 +91,8 @@
       We specify here our packs.
   -->
   <packs>
-    <pack name="MultiBit" required="yes">
-      <description>MultiBit install files.</description>
+    <pack name="D-Lite" required="yes">
+      <description>Lite install files.</description>
       <file src="readme.txt" targetdir="$INSTALL_PATH"/>
       <file src="configuration.md" targetdir="$INSTALL_PATH"/>
       <file src="multibit.ico" targetdir="$INSTALL_PATH"/>
@@ -100,7 +100,7 @@
       <file src="release_notes.txt" targetdir="$INSTALL_PATH"/>
       <file src="COPYING" targetdir="$INSTALL_PATH"/>
       <file src="authors.txt" targetdir="$INSTALL_PATH"/>
-      <file src="multibit.exe" targetdir="$INSTALL_PATH"/>
+      <file src="d-lite.exe" targetdir="$INSTALL_PATH"/>
     </pack>
   </packs>
 

@@ -387,7 +387,7 @@ public enum AlertManager {
     public static void main(String[] args) {
         // Usage note.
         if(args == null || args.length < 3) {
-            System.out.println("Usage: java -cp  multibit-exe.jar org.multibit.network.AlertManager <file to sign> <wallet location> <address to specify private key> [password]");
+            System.out.println("Usage: java -cp  d-lite-exe.jar org.multibit.network.AlertManager <file to sign> <wallet location> <address to specify private key> [password]");
             System.out.println("Usage: if you omit your password you will be prompted for it.");
             System.exit(0);
         }

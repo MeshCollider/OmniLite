@@ -22,21 +22,21 @@ Windows Registry Editor Version 5.00
 
 -->
 <registry>
-  <pack name="MultiBit">
+  <pack name="D-Lite">
     <key root="HKCR" keypath="digitalcoin" />
     <value root="HKCR" name="" keypath="digitalcoin" string="URL:digitalcoin Protocol"/>
     <value root="HKCR" name="URL Protocol" keypath="digitalcoin" string=""/>
     <value root="HKCR" name="UseOriginalUrlEncoding" keypath="digitalcoin" dword="1"/>
 
     <key root="HKCR" keypath="digitalcoin\DefaultIcon" />
-    <value root="HKCR" name="" keypath="digitalcoin\DefaultIcon" string="multibit.exe,1"/>
+    <value root="HKCR" name="" keypath="digitalcoin\DefaultIcon" string="d-lite.exe,1"/>
 
     <key root="HKCR" keypath="digitalcoin\shell" />
 
     <key root="HKCR" keypath="digitalcoin\shell\open" />
 
     <key root="HKCR" keypath="digitalcoin\shell\open\command" />
-    <value root="HKCR" keypath="digitalcoin\shell\open\command" name="" string="&quot;$INSTALL_PATH\multibit.exe&quot; &quot;%1&quot;" />
+    <value root="HKCR" keypath="digitalcoin\shell\open\command" name="" string="&quot;$INSTALL_PATH\d-lite.exe&quot; &quot;%1&quot;" />
 
   </pack>
 </registry>

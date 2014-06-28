@@ -1,7 +1,7 @@
 <shortcuts> 
-   <programGroup defaultName="MultiBit" location="applications"/> 
-   <shortcut name="MultiBit ${project.version}" 
-             target="$INSTALL_PATH/multibit.exe" 
+   <programGroup defaultName="D-Lite" location="applications"/>
+   <shortcut name="D-Lite ${project.version}"
+             target="$INSTALL_PATH/d-lite.exe"
              description="MultiBit" 
              workingDirectory="$INSTALL_PATH"
              iconFile="$INSTALL_PATH/multibit.ico" 
@@ -11,7 +11,8 @@
              applications="no" 
              startMenu="no" 
              startup="no">
-    </shortcut>    <shortcut name="Uninstall MultiBit ${project.version}" 
+    </shortcut>
+    <shortcut name="Uninstall D-Lite ${project.version}"
              target="$INSTALL_PATH/uninstaller/uninstaller.jar" 
              description="Uninstall MultiBit" 
              initialState="normal" 
@@ -20,4 +21,5 @@
              applications="no" 
              startMenu="no" 
              startup="no">
-    </shortcut></shortcuts>
+    </shortcut>
+</shortcuts>
