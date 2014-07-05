@@ -16,10 +16,10 @@
       The meaning of the tags should be natural ...
   -->
   <info>
-    <appname>MultiBit</appname>
-    <appsubpath>MultiBit-${project.version}</appsubpath>
+    <appname>D-Lite</appname>
+    <appsubpath>D-Lite-${project.version}</appsubpath>
     <appversion>${project.version}</appversion>
-    <url>https://multibit.org/</url>
+    <url>http://digitalcoin.co/forums/index.php/topic,1064.0.html</url>
     <uninstaller write="yes"/>
     <javaversion>1.6</javaversion>
     <run-privileged condition="izpack.windowsinstall.vista|izpack.windowsinstall.7"/>

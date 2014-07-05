@@ -54,7 +54,7 @@ public class TransactionDetailsDialog extends MultiBitDialog {
 
     private static final String BLOCKCHAIN_INFO_PREFIX = "http://blockchain.info/tx-index/";
 
-    private static final String BLOCKEXPLORER_TRANSACTION_PREFIX = "http://dgc.blockr.io/tx/info";
+    private static final String BLOCKEXPLORER_TRANSACTION_PREFIX = "http://dgc.blockr.io/tx/info/";
 
     private static final long serialVersionUID = 191435612345057705L;
 
