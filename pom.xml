@@ -22,7 +22,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>hashengineering.digitalcoin</groupId>
     <artifactId>d-lite</artifactId>
-    <version>0.5.18</version>
+    <version>0.5.18.1</version>
     <name>D-Lite</name>
     <description>A Java Swing client for Digitalcoin</description>
     <url>http://hashengineeringsolutions.com</url>
