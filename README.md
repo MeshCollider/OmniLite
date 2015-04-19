@@ -26,7 +26,7 @@ https://github.com/MeshCollider/omnicoinj-mb.git
 The branch you should use for the MultiBit master code is: `omnicoinj-0.11.2-mb-alice`
 The branch you should use for the MultiBit develop code is: `omnicoinj-0.11.2-mb-alice`
 
-Once cloned, you should then install the custom digitalcoinj library using
+Once cloned, you should then install the custom omnicoinj library using
 
 ```
 mvn clean install
