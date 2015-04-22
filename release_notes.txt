@@ -1,3 +1,7 @@
+OmniLite
+Version 1:
+  Update code to Omnicoin
+
 MultiBit release notes.
 
 28 Apr 2014 Version 0.5.18
