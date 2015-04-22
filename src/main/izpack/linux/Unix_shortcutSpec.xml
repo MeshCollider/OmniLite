@@ -2,18 +2,18 @@
 
 <shortcuts>
 
-  <programGroup defaultName="D-Lite"
+  <programGroup defaultName="OmniLite"
   location="applications"/>
 
    <shortcut
-     name="D-Lite ${project.version}"
+     name="OmniLite ${project.version}"
      programGroup="yes"
      desktop="yes"
      applications="no"
      startMenu="no"
      startup="no"
      target="/usr/bin/java"
-     commandLine="-jar $INSTALL_PATH/d-lite-exe.jar"
+     commandLine="-jar $INSTALL_PATH/omnilite-exe.jar"
      initialState="normal"
      iconFile="$INSTALL_PATH/multibit48.png"
      workingDirectory="$INSTALL_PATH"
@@ -22,7 +22,7 @@
      description="MultiBit ${project.version}">
    </shortcut>
    <shortcut
-     name="Uninstall D-Lite ${project.version}"
+     name="Uninstall OmniLite ${project.version}"
      programGroup="yes"
      desktop="yes"
      applications="no"
@@ -34,7 +34,7 @@
      workingDirectory="$INSTALL_PATH"
      type="Application"
      encoding="UTF-8"
-     description="Uninstall D-Lite ${project.version}">
+     description="Uninstall OmniLite ${project.version}">
    </shortcut>
 </shortcuts>
 

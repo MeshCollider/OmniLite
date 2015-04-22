@@ -16,10 +16,10 @@
       The meaning of the tags should be natural ...
   -->
   <info>
-    <appname>D-Lite</appname>
-    <appsubpath>D-Lite-${project.version}</appsubpath>
+    <appname>OmniLite</appname>
+    <appsubpath>OmniLite-${project.version}</appsubpath>
     <appversion>${project.version}</appversion>
-    <url>http://digitalcoin.co/forums/index.php/topic,1064.0.html</url>
+    <url>http://www.omnicoin.org/</url>
     <uninstaller write="yes"/>
     <javaversion>1.6</javaversion>
     <run-privileged condition="izpack.windowsinstall.vista|izpack.windowsinstall.7"/>
@@ -91,7 +91,7 @@
       We specify here our packs.
   -->
   <packs>
-    <pack name="D-Lite" required="yes">
+    <pack name="OmniLite" required="yes">
       <description>Lite install files.</description>
       <file src="readme.txt" targetdir="$INSTALL_PATH"/>
       <file src="configuration.md" targetdir="$INSTALL_PATH"/>
@@ -100,7 +100,7 @@
       <file src="release_notes.txt" targetdir="$INSTALL_PATH"/>
       <file src="COPYING" targetdir="$INSTALL_PATH"/>
       <file src="authors.txt" targetdir="$INSTALL_PATH"/>
-      <file src="d-lite.exe" targetdir="$INSTALL_PATH"/>
+      <file src="omnilite.exe" targetdir="$INSTALL_PATH"/>
     </pack>
   </packs>
 

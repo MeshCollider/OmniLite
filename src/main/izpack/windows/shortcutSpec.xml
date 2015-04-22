@@ -1,7 +1,7 @@
 <shortcuts> 
-   <programGroup defaultName="D-Lite" location="applications"/>
-   <shortcut name="D-Lite ${project.version}"
-             target="$INSTALL_PATH/d-lite.exe"
+   <programGroup defaultName="OmniLite" location="applications"/>
+   <shortcut name="OmniLite ${project.version}"
+             target="$INSTALL_PATH/omnilite.exe"
              description="MultiBit" 
              workingDirectory="$INSTALL_PATH"
              iconFile="$INSTALL_PATH/multibit.ico" 
@@ -12,9 +12,9 @@
              startMenu="no" 
              startup="no">
     </shortcut>
-    <shortcut name="Uninstall D-Lite ${project.version}"
+    <shortcut name="Uninstall OmniLite ${project.version}"
              target="$INSTALL_PATH/uninstaller/uninstaller.jar" 
-             description="Uninstall MultiBit" 
+             description="Uninstall OmniLite" 
              initialState="normal" 
              programGroup="yes"
              desktop="no" 
