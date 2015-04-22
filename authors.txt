@@ -1,5 +1,6 @@
 OmniBit by MeshCollider
-D-Lite by HashEngineering
+
+Forked from D-Lite by HashEngineering
 
 MultiBit
 
