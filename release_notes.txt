@@ -1,5 +1,5 @@
 OmniLite
-Version 1:
+Version 1.0:
   Update code to Omnicoin
 
 MultiBit release notes.
