@@ -61,7 +61,7 @@ public enum AlertManager {
 
     private Logger log = LoggerFactory.getLogger(AlertManager.class);
 
-    public static final String DEFAULT_VERSION_URL = "https://www.multibit.org/version.txt";
+    public static final String DEFAULT_VERSION_URL = "https://www.omnicoin.org/";
 
     public static final String RELEASES_URL = "https://www.multibit.org/releases.html";
 
@@ -94,7 +94,7 @@ public enum AlertManager {
      * there is a newer version available.
      */
     public void checkVersion() {
-        checkVersionInBackground();
+        //checkVersionInBackground();
     }
 
     /**
