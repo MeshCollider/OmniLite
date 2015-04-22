@@ -22,7 +22,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.meshcollision.omnicoin</groupId>
     <artifactId>omnilite</artifactId>
-    <version>0.1</version>
+    <version>1.0</version>
     <name>OmniLite</name>
     <description>A Java Swing client for Omnicoin</description>
     <url>http://www.omnicoin.org</url>
