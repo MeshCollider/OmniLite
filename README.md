@@ -20,7 +20,9 @@ and the MultiBit team are working towards a complete integration through the Mul
 While it is possible to build MultiBit using our staging repository you may want to review the modified omnicoinj library
 for yourself. You can clone from this fork:
 ```
-https://github.com/MeshCollider/omnicoinj-mb.git
+git clone https://github.com/MeshCollider/omnicoinj.git
+git checkout multibit
+git pull
 ```
 
 The required version for use with the MultiBit master code is `omnicoinj-0.11.2-mb-alice`
@@ -30,6 +32,8 @@ Once cloned, you should then install the custom omnicoinj library using
 ```
 mvn clean install
 ```
+
+Build the checkpoints file and rename to `multibit.checkpoints`, and repalce the current checkpoints file with this new file.
 
 ### Maven build targets
 
