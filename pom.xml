@@ -437,35 +437,35 @@
                                         perm="777" />
 
                                 <copy
-                                        todir="${basedir}/target/MultiBit-mac/OmniLite.app">
+                                        todir="${basedir}/target/OmniLite-mac/OmniLite.app">
                                     <fileset dir="${basedir}/target/OmniLite.app"
                                              includes="**" />
                                 </copy>
                                 <copy file="${basedir}/src/main/izpack/mac/readme.txt"
-                                      todir="${basedir}/target/MultiBit-mac" />
+                                      todir="${basedir}/target/OmniLite-mac" />
 
                                 <!-- Create Applications Symbolic link -->
                                 <!-- WARNING, do not remove this symbolic link by Java(ant) -->
                                 <exec executable="ln" os="'Mac OS X'">
                                     <arg
-                                            line="-s /Applications ${basedir}/target/MultiBit-mac/Applications" />
+                                            line="-s /Applications ${basedir}/target/OmniLite-mac/Applications" />
                                 </exec>
 
                                 <!-- Make the JavaAppLauncher in the MultiBit app (it loses its
                        									'x' permission after the copy) -->
                                 <chmod
-                                        file="${basedir}/target/MultiBit-mac/OmniLite.app/Contents/MacOS/JavaApplicationStub"
+                                        file="${basedir}/target/OmniLite-mac/OmniLite.app/Contents/MacOS/JavaApplicationStub"
                                         perm="777" />
 
                                 <!-- Sign the Mac app -->
                                 <exec executable="codesign" os="'Mac OS X'">
                                     <arg
-                                            line="--sign 'Developer ID Application: James Burton' --force ${basedir}/target/MultiBit-mac/OmniLite.app" />
+                                            line="--sign 'Developer ID Application: James Burton' --force ${basedir}/target/OmniLite-mac/OmniLite.app" />
                                 </exec>
                                 <!-- Verify it is signed ok -->
                                 <exec executable="codesign" os="'Mac OS X'">
                                     <arg
-                                            line="--display --verbose=4 ${basedir}/target/MultiBit-mac/OmniLite.app" />
+                                            line="--display --verbose=4 ${basedir}/target/OmniLite-mac/OmniLite.app" />
                                 </exec>
 
                                 <!-- create a DMG file -->
@@ -475,19 +475,19 @@
                                     <arg value="-imagekey"/>
                                     <arg value="zlib-level=9" />
                                     <arg value="-srcfolder" />
-                                    <arg value="${basedir}/target/MultiBit-mac" />
+                                    <arg value="${basedir}/target/OmniLite-mac" />
                                     <arg value="${basedir}/target/omnilite-${project.version}.dmg" />
                                 </exec>
 
                                 <!-- IMPORTANT! -->
                                 <!-- Remove symbolic link before deleting tmp dir -->
                                 <exec executable="rm" os="'Mac OS X'">
-                                    <arg line="-R ${basedir}/target/MultiBit-mac/Applications" />
+                                    <arg line="-R ${basedir}/target/OmniLite-mac/Applications" />
                                 </exec>
 
                                 <!-- get rid of temporary directory -->
                                 <delete includeEmptyDirs="true">
-                                    <fileset dir="${basedir}/target/MultiBit-mac" />
+                                    <fileset dir="${basedir}/target/OmniLite-mac" />
                                 </delete>
                             </tasks>
                         </configuration>
