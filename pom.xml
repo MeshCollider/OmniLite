@@ -25,7 +25,7 @@
     <version>1.0</version>
     <name>OmniLite</name>
     <description>A Java Swing client for Omnicoin</description>
-    <url>http://www.omnicoin.org</url>
+    <url>http://meshcollider.github.io/OmniLite/</url>
     <!-- Use "mvn clean package" to build the code packaged into a basic multibit.jar 
   		Use "mvn clean verify" before submitting a patch Use "mvn clean install" 
   		to build the executable jar, installers and Mac DMG Use "mvn site:site" to 

@@ -19,7 +19,7 @@
         <appname>OmniLite</appname>
         <appsubpath>OmniLite-${project.version}</appsubpath>
         <appversion>${project.version}</appversion>
-        <url>http://www.omnicoin.org/</url>
+        <url>http://meshcollider.github.io/OmniLite/</url>
         <uninstaller write="yes" />
         <javaversion>1.6</javaversion>
     </info>
