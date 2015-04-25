@@ -38,6 +38,18 @@ import java.util.Collection;
 import java.util.List;
 import java.util.TimerTask;
 
+import org.json.JSONObject;
+import org.json.JSONException;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.net.URL;
+import java.nio.charset.Charset;
+import java.lang.StringBuffer;
+
 /**
  * TimerTask to poll currency exchanges for ticker data process
  */
@@ -245,7 +257,37 @@ public class TickerTimerTask extends TimerTask {
                                 }
                             }
 
-                            this.exchangeController.getModel().getExchangeData(shortExchangeName).setLastPrice(currency, last);
+                            BigMoney lastOMC = last;
+                            BufferedReader reader = null;
+                            long lastAmount = 0;
+                            try {
+                                URL url = new URL("https://bittrex.com/api/v1.1/public/getticker?market=btc-omc");
+                                reader = new BufferedReader(new InputStreamReader(url.openStream()));
+                                StringBuffer buffer = new StringBuffer();
+                                int read;
+                                char[] chars = new char[1024];
+                                while ((read = reader.read(chars)) != -1)
+                                    buffer.append(chars, 0, read); 
+
+                                JSONObject json = new JSONObject(buffer.toString());
+                                if(((Boolean)json.get("success")) == Boolean.TRUE) {
+                                    lastAmount = Long.parseLong((String) json.getJSONObject("result").get("Last"));
+                                }
+                                else {
+                                    lastAmount = 0;
+                                }
+                            } catch (JSONException e) {
+                                lastAmount = 0;
+                                //Error getting exchange rate
+                                //e.printStackTrace();
+                            } finally {
+                                if (reader != null)
+                                    reader.close();
+                            }
+
+                            lastOMC = BigMoney.of(last.getCurrencyUnit(), new BigDecimal(lastAmount * last.getAmount().longValue()));
+
+                            this.exchangeController.getModel().getExchangeData(shortExchangeName).setLastPrice(currency, lastOMC); 
                             this.exchangeController.getModel().getExchangeData(shortExchangeName).setLastBid(currency, bid);
                             this.exchangeController.getModel().getExchangeData(shortExchangeName).setLastAsk(currency, ask);
                             log.debug("Exchange = " + shortExchangeName);
@@ -261,7 +303,7 @@ public class TickerTimerTask extends TimerTask {
                                     }
                                 }
                                 CurrencyConverter.INSTANCE.setCurrencyUnit(CurrencyUnit.of(newCurrencyCode));
-                                CurrencyConverter.INSTANCE.setRate(last.getAmount());
+                                CurrencyConverter.INSTANCE.setRate(lastOMC.getAmount());
                             }
                         }
                     }

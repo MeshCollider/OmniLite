@@ -2,7 +2,7 @@
    <programGroup defaultName="OmniLite" location="applications"/>
    <shortcut name="OmniLite ${project.version}"
              target="$INSTALL_PATH/omnilite.exe"
-             description="MultiBit" 
+             description="OmniLite" 
              workingDirectory="$INSTALL_PATH"
              iconFile="$INSTALL_PATH/multibit.ico" 
              initialState="normal" 

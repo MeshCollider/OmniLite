@@ -19,7 +19,7 @@
      workingDirectory="$INSTALL_PATH"
      type="Application"
      encoding="UTF-8"
-     description="MultiBit ${project.version}">
+     description="OmniLite ${project.version}">
    </shortcut>
    <shortcut
      name="Uninstall OmniLite ${project.version}"

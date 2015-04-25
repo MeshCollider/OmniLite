@@ -47,7 +47,7 @@ public class ExchangeModel extends AbstractModel<CoreModel> {
     public static final String TICKER_SECOND_ROW_CURRENCY = "tickerSecondRowCurrency";
     
     // Currency support.
-    public static final String SHOW_BITCOIN_CONVERTED_TO_FIAT = "showBitcoinConvertedToFiat";   // boolean
+    public static final String SHOW_BITCOIN_CONVERTED_TO_FIAT = "showOmnicoinConvertedToFiat";   // boolean
     public static final String OPEN_EXCHANGE_RATES_API_CODE = "openExchangeRatesApiCode";
     
     

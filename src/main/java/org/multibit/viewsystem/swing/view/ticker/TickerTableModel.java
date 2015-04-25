@@ -76,8 +76,8 @@ public class TickerTableModel extends AbstractTableModel {
         }
         showCurrency = tickerColumnsToShow.indexOf(TICKER_COLUMN_CURRENCY) > -1;
         showLastPrice = tickerColumnsToShow.indexOf(TICKER_COLUMN_LAST_PRICE) > -1;
-        showBid = tickerColumnsToShow.indexOf(TICKER_COLUMN_BID) > -1;
-        showAsk = tickerColumnsToShow.indexOf(TICKER_COLUMN_ASK) > -1;
+        showBid = false;//tickerColumnsToShow.indexOf(TICKER_COLUMN_BID) > -1;
+        showAsk = false;//tickerColumnsToShow.indexOf(TICKER_COLUMN_ASK) > -1;
         showExchange = tickerColumnsToShow.indexOf(TICKER_COLUMN_EXCHANGE) > -1;
 
         numberOfColumns = 0;
@@ -105,8 +105,8 @@ public class TickerTableModel extends AbstractTableModel {
         columnVariables = new String[numberOfColumns];
         System.arraycopy(tempColumns, 0, columnVariables, 0, numberOfColumns);
 
-        showSecondRow = Boolean.TRUE.toString().equals(
-                controller.getModel().getUserPreference(ExchangeModel.TICKER_SHOW_SECOND_ROW));
+        showSecondRow = false;//Boolean.TRUE.toString().equals(
+                //controller.getModel().getUserPreference(ExchangeModel.TICKER_SHOW_SECOND_ROW));
 
         exchange1 = controller.getModel().getUserPreference(ExchangeModel.TICKER_FIRST_ROW_EXCHANGE);
         if (exchange1 == null || "".equals(exchange1) || "null".equals(exchange1)) {

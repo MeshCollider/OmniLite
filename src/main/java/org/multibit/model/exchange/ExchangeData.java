@@ -15,19 +15,13 @@
  */
 package org.multibit.model.exchange;
 
-import com.xeiam.xchange.bitstamp.BitstampExchange;
 import com.xeiam.xchange.btce.BTCEExchange;
-import com.xeiam.xchange.campbx.CampBXExchange;
-import com.xeiam.xchange.oer.OERExchange;
-import com.xeiam.xchange.virtex.VirtExExchange;
 import org.joda.money.BigMoney;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-
-//import com.xeiam.xchange.btcchina.BTCChinaExchange;
 
 /**
  * 
@@ -45,6 +39,7 @@ public class ExchangeData {
     public static final String OPEN_EXCHANGE_RATES_EXCHANGE_NAME = "OpenExchangeRates";
     public static final String MT_GOX_EXCHANGE_NAME = "MtGox";  // No longer presently to user
     public static final String VIRTEX_EXCHANGE_NAME = "VirtEx";
+    public static final String BITTREX_EXCHANGE_NAME = "Bittrex";
 
     public static final String DEFAULT_EXCHANGE = BITSTAMP_EXCHANGE_NAME;
     
@@ -54,7 +49,7 @@ public class ExchangeData {
     
     static {
         DEFAULT_CURRENCY_LIST.add("USD");
-        DEFAULT_CURRENCY_LIST.add("EUR");
+        //DEFAULT_CURRENCY_LIST.add("EUR");
     }
     
     public static final BigMoney DO_NOT_KNOW = null;
@@ -131,20 +126,24 @@ public class ExchangeData {
    * MTGOX has now been removed - any references to it get mapped to BITSTAMP
    */
     public static String[] getAvailableExchanges() {
-        return new String[] { BITSTAMP_EXCHANGE_NAME,
+        return new String[] {/* BITSTAMP_EXCHANGE_NAME,
             BTCE_EXCHANGE_NAME,
             CAMPBX_EXCHANGE_NAME,
             OPEN_EXCHANGE_RATES_EXCHANGE_NAME,
-            VIRTEX_EXCHANGE_NAME};
+            VIRTEX_EXCHANGE_NAME*/
+            BITTREX_EXCHANGE_NAME};
     }
 
     public static Collection<String> getAvailableCurrenciesForExchange(String shortExchangeName) {
-        Collection<String>availableCurrencies = exchangeNameToAvailableCurrenciesMap.get(shortExchangeName);
+        /*Collection<String>availableCurrencies = exchangeNameToAvailableCurrenciesMap.get(shortExchangeName);
         if (availableCurrencies == null) {
             return new ArrayList<String>();
         } else {
             return availableCurrencies;
-        }
+        }*/
+        List<String> currencies = new ArrayList<String>();
+        currencies.add("USD");
+        return currencies;
     }
 
     public static void setAvailableCurrenciesForExchange(String exchangeName, Collection<String> currencies) {
@@ -156,7 +155,7 @@ public class ExchangeData {
      * Convert an exchange short name into a classname that can be used to create an Exchange.
      */
     public static String convertExchangeShortNameToClassname(String shortExchangeName) {
-        if (BITSTAMP_EXCHANGE_NAME.equalsIgnoreCase(shortExchangeName)) {
+        /*if (BITSTAMP_EXCHANGE_NAME.equalsIgnoreCase(shortExchangeName)) {
             return  BitstampExchange.class.getName();
         }  else if (BTCE_EXCHANGE_NAME.equalsIgnoreCase(shortExchangeName)) {
             return  BTCEExchange.class.getName();
@@ -166,6 +165,8 @@ public class ExchangeData {
             return  OERExchange.class.getName();
         } else if (VIRTEX_EXCHANGE_NAME.equalsIgnoreCase(shortExchangeName)) {
             return  VirtExExchange.class.getName();
+        }*/if(BITTREX_EXCHANGE_NAME.equalsIgnoreCase(shortExchangeName)) {
+            return  BTCEExchange.class.getName();//"Bittrex";
         } else {
             // Unidentified exchange.
             return null;

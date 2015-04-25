@@ -25,7 +25,7 @@ git checkout multibit
 git pull
 ```
 
-The required version for use with the MultiBit master code is `omnicoinj-0.11.2-mb-alice`
+The required version for use with the OmniLite master code is `omnicoinj-0.11.2-mb-alice`
 
 Once cloned, you should then install the custom omnicoinj library using
 

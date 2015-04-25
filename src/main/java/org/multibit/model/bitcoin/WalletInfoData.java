@@ -57,7 +57,7 @@ public class WalletInfoData {
     private static final String PROPERTY_MARKER = "property";
     private static final String SEPARATOR = ",";
 
-    private static final String INFO_MAGIC_TEXT = "multiBit.info";
+    private static final String INFO_MAGIC_TEXT = "omnilite.info";
     private static final String INFO_VERSION_TEXT = "1";
 
     private static final String WALLET_VERSION_MARKER = "walletVersion";

@@ -50,8 +50,8 @@ import java.util.*;
 public class FileHandler {
     private static Logger log = LoggerFactory.getLogger(FileHandler.class);
 
-    public static final String USER_PROPERTIES_FILE_NAME = "multibit.properties";
-    public static final String USER_PROPERTIES_HEADER_TEXT = "multibit";
+    public static final String USER_PROPERTIES_FILE_NAME = "omnilite.properties";
+    public static final String USER_PROPERTIES_HEADER_TEXT = "omnilite";
 
     private final Controller controller;
     private final BitcoinController bitcoinController;
