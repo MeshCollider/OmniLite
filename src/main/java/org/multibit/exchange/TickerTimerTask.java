@@ -50,6 +50,8 @@ import java.net.URL;
 import java.nio.charset.Charset;
 import java.lang.StringBuffer;
 
+import javax.swing.JOptionPane;
+
 /**
  * TimerTask to poll currency exchanges for ticker data process
  */
@@ -275,9 +277,11 @@ public class TickerTimerTask extends TimerTask {
                                 }
                                 else {
                                     lastAmount = 0;
+                                    JOptionPane.showMessageDialog(null, "Error getting exchange rate: " + json.get("message"), "Error", JOptionPane.ERROR_MESSAGE);
                                 }
                             } catch (JSONException e) {
                                 lastAmount = 0;
+                                JOptionPane.showMessageDialog(null, "Error getting exchange rate: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                                 //Error getting exchange rate
                                 //e.printStackTrace();
                             } finally {
@@ -286,6 +290,7 @@ public class TickerTimerTask extends TimerTask {
                             }
 
                             lastOMC = BigMoney.of(last.getCurrencyUnit(), new BigDecimal(lastAmount * last.getAmount().longValue()));
+                            JOptionPane.showMessageDialog(null, "Current exchange rate: " + lastOMC.getAmount(), "OMC-USD", JOptionPane.INFORMATION_MESSAGE);
 
                             this.exchangeController.getModel().getExchangeData(shortExchangeName).setLastPrice(currency, lastOMC); 
                             this.exchangeController.getModel().getExchangeData(shortExchangeName).setLastBid(currency, bid);

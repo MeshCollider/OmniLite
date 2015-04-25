@@ -141,7 +141,7 @@ public class ExchangeData {
         } else {
             return availableCurrencies;
         }*/
-        List<String> currencies = new ArrayList<String>();
+        Collection<String> currencies = new ArrayList<String>();
         currencies.add("USD");
         return currencies;
     }

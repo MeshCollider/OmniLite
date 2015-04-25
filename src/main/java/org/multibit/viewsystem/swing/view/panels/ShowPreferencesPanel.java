@@ -1888,7 +1888,7 @@ public class ShowPreferencesPanel extends JPanel implements Viewable, Preference
 
     @Override
     public String getNewExchange2() {
-        return (String) exchangeComboBox2.getSelectedItem();
+        return "Bittrex";//(String) exchangeComboBox2.getSelectedItem();
     }
 
     @Override
