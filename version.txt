@@ -1,2 +1,2 @@
-1.0
-message First release of OmniLite
+1.1
+Test to see if version update notification works
