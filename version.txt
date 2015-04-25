@@ -1,2 +1,2 @@
 1.1
-Test to see if version update notification works
+message Test to see if version update notification works
